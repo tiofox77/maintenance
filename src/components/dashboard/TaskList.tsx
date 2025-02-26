@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { DatePickerWithRange } from "../ui/date-picker-with-range";
+import { DateRange } from "react-day-picker";
 import { Badge } from "@/components/ui/badge";
 import { Task } from "@/lib/types";
 import { Button } from "@/components/ui/button";
@@ -60,13 +61,7 @@ const TaskList: React.FC<TaskListProps> = ({
   const [selectedDepartment, setSelectedDepartment] =
     React.useState<string>("all");
   const [selectedCategory, setSelectedCategory] = React.useState<string>("all");
-  const [dateRange, setDateRange] = React.useState<{
-    from: Date | undefined;
-    to: Date | undefined;
-  }>({
-    from: undefined,
-    to: undefined,
-  });
+  const [dateRange, setDateRange] = React.useState<DateRange | undefined>();
 
   const getStatusColor = (status: Task["status"]) => {
     switch (status) {

@@ -16,9 +16,15 @@ import QuickAddTask from "@/components/dashboard/QuickAddTask";
 
 export default function TasksPage() {
   const [tasks, setTasks] = React.useState<Task[]>([]);
-  const [departments, setDepartments] = React.useState([]);
-  const [equipment, setEquipment] = React.useState([]);
-  const [categories, setCategories] = React.useState([]);
+  const [departments, setDepartments] = React.useState<
+    Array<{ id: string; name: string }>
+  >([]);
+  const [equipment, setEquipment] = React.useState<
+    Array<{ id: string; name: string }>
+  >([]);
+  const [categories, setCategories] = React.useState<
+    Array<{ id: string; name: string }>
+  >([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const { toast } = useToast();
 
